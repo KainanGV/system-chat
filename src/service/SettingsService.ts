@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { SettingsRepository } from "../repositories/SettingsRepository";
-
+//Camada service cujo o objetivo é a impletação de todas as funções que estão diretamente relacionadas ao nosso banco de dados
 interface ISettingsCreate {
     chat: Boolean,
     username: String
