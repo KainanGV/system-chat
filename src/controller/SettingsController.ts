@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { SettingsService } from '../service/SettingsService';
-//Contrller camanda da nossa aplicação responsável por gerenciar as função que irão ser chamadas nas rotas ou endpoints.
+//Controller camanda da nossa aplicação responsável por gerenciar as função que irão ser chamadas nas rotas ou endpoints.
 class SettingsController {
     async create(req: Request, res: Response) {
         const { username, chat } = req.body;
@@ -16,6 +16,27 @@ class SettingsController {
                 message: error.message
             });
         }
+    }
+
+    async findByUsername(req: Request, res: Response) {
+        const { username } = req.params;
+        
+        const settingsService = new SettingsService();
+
+        const settings = await settingsService.findByUsername(username);
+
+        return res.json(settings);
+    }
+
+    async update(req: Request, res: Response) {
+        const { username } = req.params;
+        const { chat } = req.body;
+
+        const settingsService = new SettingsService();
+
+        const settings = await settingsService.update(username, chat);
+
+        return res.json(settings);
     }
 }
 
