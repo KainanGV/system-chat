@@ -1,4 +1,4 @@
-import { getCustomRepository, Repository } from 'typeorm';
+import { getCustomRepository, IsNull, Repository } from 'typeorm';
 import { Connection } from '../entities/Connection';
 import { ConnectionsRepository } from '../repositories/ConnectionsRepository';
 
@@ -36,6 +36,17 @@ class ConnectionService {
         });
 
         return connection;
+    }
+
+    async findAllWithoutAdmin() {
+        const connections = await this.connectionsRepository.find({
+            where: {
+                admin_id: null
+            },
+            relations: ['user']
+        });
+
+        return connections; 
     }
 }
 

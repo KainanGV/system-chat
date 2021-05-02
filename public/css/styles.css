@@ -1,8 +1,10 @@
+
 *,
 root,
 html {
   padding: 5px;
   box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -51,6 +53,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 
 .in_support_header span {
   color: #fff;
@@ -142,6 +145,7 @@ body {
   border-radius: 4px;
   padding: 10px;
   margin-left: 12px;
+  color: black;
 }
 
 .message_send {
@@ -173,8 +177,12 @@ body {
   padding-top: 8px;
 }
 
+.text_help  span {
+  margin-left: 20px;
+}
+
 .text_help textarea {
-  width: 290px;
+  width: 230px;
   height: 115px;
 
   padding: 10px;
@@ -183,22 +191,26 @@ body {
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 4px;
-
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 30px;
   resize: none;
 }
 
 .first_email {
   display: flex;
   flex-direction: column;
-  margin-top: 34px;
+  margin-top: 22px;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .first_email input {
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 4px;
-  height: 42px;
-  width: 290px;
+  height: 32px;
+  width: 230px;
 }
 
 input[type="text"]:focus {
@@ -222,8 +234,11 @@ input[type="text"]:focus {
 
 .btn_cancel {
   border: 0;
+  height: 40px;
+  border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+  width: 121px;
 }
 
 .button {
@@ -241,9 +256,111 @@ input[type="text"]:focus {
 .charac_remaining {
   font-size: 10px;
   float: right;
+  margin-right: 30px;
+}
+
+.first_email span {
+  margin-right: 10px;
 }
 
 .date {
   text-align: right;
   font-size: 1px;
+  color: black;
+}
+
+.btn_atd {
+  cursor: pointer;
+  color: #fff;
+  background: #b32a2a;
+  border: none;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.btn_atd:hover {
+  opacity: 0.9;
+}
+
+.admin {
+  border: 1px solid #ededed;
+  margin-top: 5px;
+}
+
+.email {
+  float: left;
+  width: 350px;
+}
+
+.admin_send_message {
+  display: flex;
+  flex-direction: row;
+}
+
+.admin_send_message input {
+  width: 300px;
+  margin-right: 10px;
+}
+
+.admin_send_message button {
+  width: 100px;
+  cursor: pointer;
+}
+
+.admin_list_messages {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.admin_message_admin {
+  width: 300px;
+  background: #e0e0e0;
+  padding: 10px;
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+
+  font-family: "Roboto", sans-serif;
+}
+
+#atendimentos {
+  width: 600px;
+}
+
+.admin_message_client {
+  width: 300px;
+  background: #6f5eab;
+  padding: 10px;
+  margin: 10px;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.admin_date {
+  font-size: 10px;
+  color: black;
+}
+
+.in_support {
+  background: #8d7aef;
+  color: #fff;
+  font-size: 17px;
+}
+
+.btn_send {
+  background: #1eb363;
+  color: #eee;
+  border: none;
+}
+
+.btn_send:hover {
+  opacity: 0.8;
 }

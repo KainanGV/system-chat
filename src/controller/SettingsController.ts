@@ -35,6 +35,7 @@ class SettingsController {
         const settingsService = new SettingsService();
 
         const settings = await settingsService.update(username, chat);
+        console.log(settings);
 
         return res.json(settings);
     }
