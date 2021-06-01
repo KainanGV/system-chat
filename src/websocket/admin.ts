@@ -3,10 +3,10 @@ import { ConnectionService } from '../service/ConnectionsService';
 import { MessageService } from '../service/MessagesService';
 
 io.on('connect', async (socket) => {
-    const connectionService = new ConnectionService();
+    const connectionsService = new ConnectionService();
     const messageService = new MessageService();
 
-    const allConnectionsWithoutAdmin = await connectionService.findAllWithoutAdmin();
+    const allConnectionsWithoutAdmin = await connectionsService.findAllWithoutAdmin();
 
     io.emit('admin_list_all_users', allConnectionsWithoutAdmin);
 
@@ -27,11 +27,11 @@ io.on('connect', async (socket) => {
             admin_id: socket.id
         });
 
-        const { socket_id } = await connectionService.findByUserId(user_id);
+        const { socket_id } = await connectionsService.findByUserId(user_id);
 
-        io.to(socket_id).emit("admin_send_to_client", {
+        io.to(socket_id).emit('admin_send_to_client', {
             text,
-            socket_id
-        })
+            socket_id: socket.id,
+        });
     })
 });

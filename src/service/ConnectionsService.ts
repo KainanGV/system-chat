@@ -3,7 +3,7 @@ import { Connection } from '../entities/Connection';
 import { ConnectionsRepository } from '../repositories/ConnectionsRepository';
 
 interface IConnectionCreate {
-    socket_id: String;
+    socket_id: string;
     user_id: String;
     admin_id?: String;
     id?: String;
@@ -47,6 +47,14 @@ class ConnectionService {
         });
 
         return connections; 
+    }
+
+    async findBySocketID(socket_id: string) {
+        const connection = await this.connectionsRepository.findOne({
+            socket_id
+        })
+
+        return connection;
     }
 }
 

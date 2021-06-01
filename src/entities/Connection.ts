@@ -11,7 +11,7 @@ class Connection {
     admin_id: String;
 
     @Column()
-    socket_id: String;
+    socket_id: string;
 
     @JoinColumn({name: "user_id"})
     @ManyToOne(() => User)
